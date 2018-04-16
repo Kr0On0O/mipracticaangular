@@ -1,0 +1,24 @@
+<h1>Listado Usuario</h1>
+<br>
+<button [routerLink]="['Nuevo']" class="btn btn-outline-primary" type="button" name="button">Nuevo Usuario</button>
+<hr>
+<div class="table-responsive">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let k of usuarios|obtenerkeys">
+      <td>{{usuarios[k].nombre}}</td>
+      <td>{{usuarios[k].apellido}}</td>
+      <td>{{usuarios[k].correo}}</td>
+      <td><button (click)="borrarUser(k)"class="btn btn-outline-danger">Borrar</button><button class="btn btn-outline-warning" [routerLink]="['/Opciones',k]">Detalles</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>

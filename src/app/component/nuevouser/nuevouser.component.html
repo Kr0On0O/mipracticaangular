@@ -1,0 +1,52 @@
+<button [routerLink]="['ListadoUsuarios']" type="button" class="btn btn-outline-warning"name="button">Volver</button>
+
+<h1>Nuevo Usuario <small>{{usuario.nombre}}</small></h1>
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+    <form (ngSubmit)="nuevo()" #forma="ngForm">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input [(ngModel)]="usuario.nombre"
+        name="nombre"
+         type="text"
+         class="form-control"
+        placeholder="Nombre del heroe"
+        required>
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <input [(ngModel)]="usuario.apellido"
+        name="apellido"
+         type="text"
+         class="form-control"
+        placeholder="Nombre del heroe"
+        required>
+      </div>
+      <div class="form-group">
+        <label>Correo</label>
+        <input [(ngModel)]="usuario.correo"
+        name="correo"
+        type="text"
+         class="form-control">
+      </div>
+      <div class="form-group">
+        <label>ID</label>
+        <input [(ngModel)]="usuario.id"
+        name="id"
+        type="text"
+         class="form-control">
+      </div>
+      <div class="form-group">
+        <button
+        [disabled]="!forma.valid"
+        type="submit"
+         class="btn btn-outline-primary"
+         name="button">
+         Guardar cambios
+       </button>
+
+      </div>
+
+    </form>
+
+  </div>
